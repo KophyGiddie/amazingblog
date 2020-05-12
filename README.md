@@ -29,6 +29,7 @@ This is our first Django Collaboration Project kindly follow the steps below to 
 18. Create a view to post content with the form
 19. Create an href link to your app as I have done mine in the main index.html which is found in the main templates folder in the root directory.
 20. This link should be clickable for anyone to view your project.
+21. When you are done kindly push your code back to the repo. You can also pull the code at any point in time to see what others are doing.
 
 You can make reference to my app to check if you doing everything correctly, you can copy over code however make sure you know what you are doing. Each of you will be asked to explain your code
 
