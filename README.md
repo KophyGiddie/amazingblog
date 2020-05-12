@@ -15,11 +15,19 @@ This is our first Django Collaboration Project kindly follow the steps below to 
 
     a. Homepage View - To display your blog items
     
-    b. Creating New Post View - To create new blog post
+    b. Creating New Post View - To create new blog post | Create this view after point 17
     
-    c. Post Detail - To view article details
+    c. Post Detail - To view article details | Create this view after point 17
 
 11. Create a templates folder in your app not in the main root folder in your app.
 12. Go ahead and design your actual html templates in your templates folder located in your app
 13. Name your templates with the name convention starting with yourname_XXX where XXX is the name of the template
 14. Create URLs to map to your views in the urls.py in your app
+15. Create a super user account in your terminal 
+16. Run your app and login to the admin portal and create content in your app and view it on the main site
+17. Create your forms.py file in your app and go ahead to create your PostForm
+18. Create a view to post content with the form
+
+You can make reference to my app to check if you doing everything correctly, you can copy over code however make sure you know what you are doing. Each of you will be asked to explain your code
+
+Happy Coding !!!!!
