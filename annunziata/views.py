@@ -18,7 +18,7 @@ def post_new(request):
             post = form.save(commit=False)
             post.published_date = timezone.now()
             post.save()
-            return redirect('annunziata_post_detail.html', pk=post.pk)
+            return redirect('/annunziata/')
         else:
             return render(request, 'annunziata_post_new.html', {'post_form': form})
     else:
