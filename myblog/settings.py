@@ -36,7 +36,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'gideon',
     'annunziata',
-    'lucky'
+    'lucky',
+    'bright'
 ]
 
 MIDDLEWARE = [
