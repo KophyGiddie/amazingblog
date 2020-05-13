@@ -7,6 +7,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('nii/', include('Niicode.urls')),
     path('gideon/', include('gideon.urls')),
+    path('annunziata/', include('annunziata.urls')),
     path('lucky/', include('lucky.urls')),
     path('', index),
 ]

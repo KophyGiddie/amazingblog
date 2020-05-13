@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'gideon',
     'lucky',
     'Niicode',
-]
+    'annunziata'
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
