@@ -14,7 +14,7 @@ def post_new(request):
             post = form.save(commit=False)
             post.published_date = datetime.now()
             post.save()
-            return redirect('/')
+            return redirect('/lucky/')
         else:
             return render(request, 'lucky_post_new.html', {'post_form': form})
     else:
@@ -22,5 +22,5 @@ def post_new(request):
         return render(request, 'lucky_post_new.html', {'post_form': form})
     
 def post_detail(request, article_id):
-    post = Post.objects.get(article_id)
+    post = Post.objects.get(id=article_id)
     return render(request, 'lucky_post_detail.html', {'myarticle': post})
