@@ -16,7 +16,7 @@ def post_new(request):
             post = form.save(commit=False)
             post.published_date = datetime.now()
             post.save()
-            return redirect('/')
+            return redirect('/gideon/')
         else:
             return render(request, 'gideon_post_new.html', {'post_form': form})
     else:
