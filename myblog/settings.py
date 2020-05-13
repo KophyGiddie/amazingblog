@@ -35,12 +35,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'gideon',
-<<<<<<< HEAD
     'Nathaniel',
-=======
     'lucky',
     'Niicode',
->>>>>>> 5f8d4fe3e22627b378508e03ec180ffd7128245a
     'annunziata',
     'bright'
 
