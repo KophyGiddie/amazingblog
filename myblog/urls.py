@@ -5,6 +5,7 @@ from myblog.views import index
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('nii/', include('Niicode.urls')),
     path('gideon/', include('gideon.urls')),
     path('lucky/', include('lucky.urls')),
     path('', index),
