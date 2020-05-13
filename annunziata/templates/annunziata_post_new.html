@@ -22,7 +22,7 @@
    {{post_form.non_field_errors}}
 {% endif %}
 
-<form method="POST" action="post_new/" class="post-form">{% csrf_token %}
+<form method="POST" action="/post/new/" class="post-form">{% csrf_token %}
  {{ post_form.as_p }}
   <button type="submit" class="save btn btn-default">Save</button>
 </form>
