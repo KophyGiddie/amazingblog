@@ -9,5 +9,6 @@ urlpatterns = [
     path('gideon/', include('gideon.urls')),
     path('annunziata/', include('annunziata.urls')),
     path('lucky/', include('lucky.urls')),
+    path('bright/', include('bright.urls')),
     path('', index),
 ]
