@@ -17,8 +17,6 @@
     </head>
     <body>
 
-     
-
 
 <div class="container">
     {% if post_form.errors %}
@@ -26,11 +24,6 @@
 {% endif %}
        <h1>POST YOUR CONTENT HERE</h1>
 <form enctype="multipart/form-data" method="POST" action="/gideon/post_new/" class="post-form">{% csrf_token %}
-
-<<<<<<< HEAD
-=======
-<form method="POST" action="/gideon/post_new/" class="post-form">{% csrf_token %}
->>>>>>> b16b118545b28945d3abf8b77f6f9fc56ef155c9
  {{ post_form.as_p }}
   <button type="submit" class="btn btn-primary save btn btn-default">Save</button>
 </form>
