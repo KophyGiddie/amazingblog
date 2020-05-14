@@ -2,14 +2,17 @@ from django.shortcuts import render,redirect
 from .models import Post
 from .forms import PostForm
 from django.utils import timezone
-# Create your views here.
+
+
 def home(request):
     myposts = Post.objects.all()
     return render(request, 'annunziata_index.html', {'myposts': myposts})
 
+
 def post_detail(request, post_id):
     postdata = Post.objects.get(id=post_id)
     return render(request, 'annunziata_post_detail.html', {'postdata': postdata})
+
 
 def post_new(request):
     if request.method == 'POST':
