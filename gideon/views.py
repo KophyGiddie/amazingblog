@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from .models import Post
 from .forms import PostForm
 from datetime import datetime
+from django.contrib.auth.decorators import login_required
 
 
 def homepage(request):
@@ -9,6 +10,7 @@ def homepage(request):
     return render(request, 'gideon_index.html', {'mycontent': mydata})
 
 
+@login_required()
 def unpublished_posts(request):
     mydata = Post.objects.filter(is_published=False)
     return render(request, 'gideon_index.html', {'mycontent': mydata})

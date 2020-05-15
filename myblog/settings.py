@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'lucky',
     'Niicode',
     'annunziata',
-    'bright'
+    'bright',
+    'users'
 
 ]
 
@@ -103,6 +104,8 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
+AUTH_USER_MODEL = 'users.BlogUser'
+
 TIME_ZONE = 'UTC'
 
 USE_I18N = True
@@ -120,3 +123,6 @@ STATICFILES_DIRS = [
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 MEDIA_URL = '/media/'
+
+LOGIN_URL = '/users/login/'
+

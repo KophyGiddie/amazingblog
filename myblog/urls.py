@@ -14,6 +14,7 @@ urlpatterns = [
     path('annunziata/', include('annunziata.urls')),
     path('lucky/', include('lucky.urls')),
     path('bright/', include('bright.urls')),
+    path('users/', include('users.urls')),
     path('', index),
 ]
 
