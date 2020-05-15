@@ -17,16 +17,20 @@
     </head>
     <body>
 
-        <h1>POST YOUR CONTENT HERE</h1>
-{% if post_form.errors %}
+
+<div class="container">
+    {% if post_form.errors %}
    {{post_form.non_field_errors}}
 {% endif %}
+       <h1>POST YOUR CONTENT HERE</h1>
 
-<form method="POST" action="/gideon/post_new/" class="post-form">{% csrf_token %}
+
+<form enctype="multipart/form-data" method="POST" action="/gideon/post_new/" class="post-form"> {% csrf_token %}
  {{ post_form.as_p }}
-  <button type="submit" class="save btn btn-default">Save</button>
+  <button type="submit" class="btn btn-primary save btn btn-default">Save</button>
 </form>
 
+ </div>
 <br>
 <center><a href='/'>Back to the Homepage  </a> </center>
     </body>

@@ -7,6 +7,7 @@ class Post(models.Model):
     published_date = models.DateTimeField(blank=True, null=True)
     is_published = models.BooleanField(default=False)
     image = models.ImageField(upload_to='posts/', blank=True, null=True)
+    modified_date = models.DateTimeField(blank=True, null=True)
 
     def __str__(self):
         return self.title

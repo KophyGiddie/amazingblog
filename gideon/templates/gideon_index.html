@@ -156,11 +156,13 @@ a.box_btn:hover::before {
                <div class="col-lg-4 col-md-6">
                   <div class="single-blog">
                      <div class="blog-img">
-                        <img src="http://infinityflamesoft.com/html/abal-preview/assets/img/blog/blog1.jpg" alt="">
+
+                        <img src="{{MEDIA_URL}}{{item.image}}" alt="">
                         <div class="post-category">
                            <a href="#">{{item.category}}</a>
                         </div>
                      </div>
+
                      <div class="blog-content">
                         <div class="blog-title">
                            <h4><a href="#">{{item.title}}</a></h4>
@@ -172,6 +174,27 @@ a.box_btn:hover::before {
                         </div>
                         <p>{{item.content|truncatewords:"15"}}</p>
                         <a href="/gideon/posts/{{item.id}}/" class="box_btn">read more</a>
+
+                        <a href="/gideon/delete_post/{{item.id}}/" class="box_btn">DELETE</a>
+
+                        <a href="/gideon/edit_post/{{item.id}}/" class="box_btn">EDIT</a>
+
+                     {% if item.is_published %}
+
+                        <form method="POST" action="/gideon/unpublish_post/{{item.id}}/" class="post-form"> {% csrf_token %}
+                           <button type='submit' class="box_btn">UNPUBLISH</a>
+                        </form>
+
+                     {% else %}
+
+                         <form method="POST" action="/gideon/publish_post/{{item.id}}/" class="post-form"> {% csrf_token %}
+                            <button type='submit' class="box_btn">PUBLISH</a>
+                         </form>
+
+
+                     {% endif %}
+
+
                      </div>
                   </div>
                </div>
