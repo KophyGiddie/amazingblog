@@ -6,7 +6,7 @@ from datetime import datetime
 
 #load homepage
 def homepage(request):
-    mydata = Post.objects.all()
+    mydata = Post.objects.filter(is_published=True)
     return render(request, 'bright_index.html', {'mycontent': mydata})
 
 
@@ -30,3 +30,20 @@ def post_new(request):
 def post_detail(request, article_id):
     mydata = Post.objects.get(id=article_id)
     return render(request, 'bright_post_detail.html', {'myarticle': mydata})
+
+
+#delete post
+def post_delete(request, article_id):
+    mydata = Post.objects.get(id=article_id)
+    mydata.delete()
+    return redirect('/bright/')
+
+#publish post
+def publish_post(request, article_id):
+    if request.method == 'POST':
+        mydata = Post.objects.get(id=article_id)
+        mydata.is_published = True
+        mydata.save()
+        return redirect('/bright/')
+    else:
+        return redirect('/bright/')
