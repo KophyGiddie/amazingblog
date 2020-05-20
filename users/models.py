@@ -80,4 +80,3 @@ class BlogUser(AbstractBaseUser):
         verbose_name = _('user')
         verbose_name_plural = _('users')
 
-
