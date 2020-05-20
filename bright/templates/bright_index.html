@@ -4,7 +4,6 @@
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
 <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,800,900%7cRaleway:300,400,500,600,700" rel="stylesheet">
 
 <style>
@@ -150,19 +149,19 @@ a.box_btn:hover::before {
             </div>
             <div class="row">
 
-{% for item in mycontent %}
+            {% for item in mycontent %}
 
                <div class="col-lg-4 col-md-6">
                   <div class="single-blog">
                      <div class="blog-img">
-                        <img src="http://infinityflamesoft.com/html/abal-preview/assets/img/blog/blog1.jpg" alt="">
+                        <img src="{{MEDIA_URL}}{{item.image}}" alt="{{item.title}}">
                         <div class="post-category">
                            <a href="#">{{item.category}}</a>
                         </div>
                      </div>
                      <div class="blog-content">
                         <div class="blog-title">
-                           <h4><a href="#">{{item.title}}</a></h4>
+                           <h4><a href="/bright/posts/{{item.id}}/">{{item.title}}</a></h4>
                            <div class="meta">
                               <ul>
                                  <li>{{item.published_date}}</li>
@@ -171,14 +170,26 @@ a.box_btn:hover::before {
                         </div>
                         <p>{{item.content|truncatewords:"15"}}</p>
                         <a href="/bright/posts/{{item.id}}/" class="box_btn">read more</a>
+                        <a href="/bright/post_delete/{{item.id}}/" class="box_btn">delete</a>
+                        <a href="/bright/edit_post/{{item.id}}/" class="box_btn">edit</a>
+                        {% if item.is_published %}
+                        <form method="POST" action="/bright/unpublish_post/{{item.id}}/" class="post-form"> {% csrf_token %}
+                           <button type='submit' class="box_btn">UNPUBLISH</a>
+                        </form>
+                        {% else %}
+                         <form method="POST" action="/bright/publish_post/{{item.id}}/" class="post-form"> {% csrf_token %}
+                            <button type='submit' class="box_btn">PUBLISH</a>
+                         </form>
+                        {% endif %}
                      </div>
                   </div>
                </div>
-
-{% endfor %}
-         <br>     <br> 
-<center><a href='/'>Back to the Homepage  </a> </center>
-            </div>
+         {% endfor %}
+         </div>
+         <br>
+         <div class="row">
+            <a href='/' class="btn btn-default">Back to the Homepage  </a> 
+            <a  href="/bright/post_new/"  class="btn btn-primary">New Post</a>
          </div>
       </section>
 </body>
