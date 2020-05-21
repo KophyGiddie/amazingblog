@@ -7,7 +7,7 @@ from django.conf.urls import url
 from django.views.static import serve
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('X123/', admin.site.urls),
     path('nii/', include('Niicode.urls')),
     path('gideon/', include('gideon.urls')),
     path('Nathaniel/', include('Nathaniel.urls')),
@@ -17,7 +17,6 @@ urlpatterns = [
     path('users/', include('users.urls')),
     path('', index),
 ]
-
 
 if settings.DEBUG:
     urlpatterns += [
